@@ -1,0 +1,24 @@
+{
+  "heading": "The Admission",
+  "introduction": {
+    "title": "Introduction and workshop",
+    "description": "4 to 5 hours of activities. We will introduce the Sourcery academy, tell you more about what we do as testers, get to know each other and have a fun workshop challenging your critical thinking, problem solving, communication and team working skills."
+  },
+  "subjects": {
+    "title": "You will learn:",
+    "list": [
+      "Semantic HTML code",
+      "Advanced CSS (Scss)",
+      "BEM methodology",
+      "Accessibility standards",
+      "Agile methodology, build tools and task runners"
+    ]
+  },
+  "interview": {
+    "title": "An interview",
+    "description": "Only top candidates from day one are invited to the interview which will challenge your technical skills and English knowledge."
+  },
+  "calendar": {
+    "title": "Dates"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "heading": "The Admission",
+  "introduction": {
+    "title": "Introduction and workshop",
+    "description": "4 to 5 hours of activities. We will introduce the Sourcery academy, tell you more about what we do as front-end developers, get to know each other and have a fun workshop challenging your critical thinking, problem solving, communication and team working skills."
+  },
+  "subjects": {
+    "title": "You will learn:",
+    "list": [
+      "The foundations of testing",
+      "Functional testing for web applications and API",
+      "Foundations of non-functional testing",
+      "Foundations for test automation"
+    ]
+  },
+  "interview": {
+    "title": "An interview",
+    "description": "Only the top candidates after the final exam are invited to a job interview which will challenge your technical skills and English knowledge."
+  },
+  "calendar": {
+    "title": "Dates"
+  }
+}

@@ -1,0 +1,48 @@
+.wrapper {
+  contain: layout;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  width: 100vw;
+}
+
+.content {
+  align-content: center;
+  display: flex;
+  flex-flow: column;
+  font-size: 2.4rem;
+  gap: spacer(xxxl);
+}
+
+.helloworld {
+  animation: typing 2000ms steps(var(--count)),
+    blink 0.5s step-end infinite alternate;
+  border-right: 3px solid;
+  display: inline-block;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  width: calc(var(--count) * 1ch);
+}
+
+.image {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 30rem;
+  width: 100%;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

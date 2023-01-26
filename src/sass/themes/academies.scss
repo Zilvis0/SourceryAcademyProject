@@ -1,0 +1,47 @@
+$themes: (
+  'developers': (
+    var(--color-blue-500),
+    var(--color-blue-400),
+    var(--color-blue-300),
+    var(--color-blue-100),
+    var(--color-blue-600),
+    var(--color-rgba-blue),
+  ),
+  'testers': (
+    var(--color-green-500),
+    var(--color-green-400),
+    var(--color-green-300),
+    var(--color-green-100),
+    var(--color-green-200),
+    var(--color-rgba-green),
+  ),
+  'frontend': (
+    var(--color-red-500),
+    var(--color-red-400),
+    var(--color-red-400),
+    var(--color-red-200),
+    var(--color-red-100),
+    var(--color-rgba-red),
+  ),
+);
+
+@each $name, $theme in $themes {
+  .theme-#{$name} {
+    --color-primary: #{nth($theme, 1)};
+    --color-secondary: #{nth($theme, 2)};
+    --color-tertiary: #{nth($theme, 3)};
+    --btn-base: #{nth($theme, 2)};
+    --btn-primary: #{nth($theme, 4)};
+    --btn-secondary: #{nth($theme, 5)};
+    --outline-color: #{nth($theme, 6)};
+  }
+}
+
+// svg's unitility classes for theming
+$colors: 'primary', 'secondary', 'tertiary';
+
+@each $color in $colors {
+  .svg-theme-#{$color} {
+    color: var(--color-#{$color});
+  }
+}

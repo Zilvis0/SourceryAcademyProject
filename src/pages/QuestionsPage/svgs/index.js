@@ -1,0 +1,12 @@
+export { default as QuestionsIllustration } from './QuestionsIllustration';
+export { default as NumberZeroIllustration } from './NumberZeroIllustration';
+export { default as NumberOneIllustraion } from './NumberOneIllustraion';
+export { default as NumberTwoIllustration } from './NumberTwoIllustration';
+export { default as NumberThreeIllustration } from './NumberThreeIllustration';
+export { default as NumberFourIllustration } from './NumberFourIllustration';
+export { default as NumberFiveIllustration } from './NumberFiveIllustration';
+export { default as NumberSixIllustration } from './NumberSixIllustration';
+export { default as NumberSevenIllustration } from './NumberSevenIllustration';
+export { default as NumberEighthIllustration } from './NumberEighthIllustration';
+export { default as NumberNineIllustration } from './NumberNineIllustration';
+export { default as NumberTenIllustration } from './NumberTenIllustration';

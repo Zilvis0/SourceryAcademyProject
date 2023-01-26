@@ -1,0 +1,28 @@
+.text-input {
+  @include wrapper;
+
+  &__label {
+    @include label;
+
+    &--required::before {
+      @include required-symbol;
+    }
+  }
+
+  &__field {
+    padding: 1.2rem 1.6rem 1.3rem;
+    @include field;
+
+    &--has-error {
+      @include error;
+    }
+
+    &:focus {
+      @include focus;
+    }
+  }
+
+  &__error-msg {
+    @include error-msg;
+  }
+}

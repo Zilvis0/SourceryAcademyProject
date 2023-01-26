@@ -1,0 +1,42 @@
+.error-page {
+  @include flex-center;
+  flex-direction: column-reverse;
+
+  @include media-query('md') {
+    height: 75vh;
+  }
+
+  &__text {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    width: 60%;
+
+    @include media-query('md') {
+      gap: 2rem;
+      margin-left: 6rem;
+      width: 60%;
+    }
+  }
+
+  &__heading {
+    @include heading-styles('primary');
+    margin-bottom: 0;
+  }
+
+  &__description {
+    @include body-styles('medium');
+  }
+
+  &__illustration {
+    height: 50%;
+    width: 70%;
+    @include animate-blob-element('blob-element');
+    @include animate-circle-elements('circle-elements');
+
+    @include media-query('md') {
+      height: 50%;
+      width: 100%;
+    }
+  }
+}

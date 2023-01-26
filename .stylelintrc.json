@@ -1,0 +1,71 @@
+{
+  "customSyntax": "postcss-scss",
+  "plugins": [
+    "stylelint-selector-bem-pattern",
+    "stylelint-order",
+    "stylelint-declaration-strict-value",
+    "stylelint-scss"
+  ],
+  "extends": [
+    "stylelint-prettier/recommended",
+    "stylelint-config-sass-guidelines"
+  ],
+  "rules": {
+    "scale-unlimited/declaration-strict-value": [
+      ["/color$/"],
+      {
+        "ignoreValues": ["currentColor", "transparent", "inherit"]
+      }
+    ],
+    "block-closing-brace-newline-after": [
+      "always",
+      {
+        "ignoreAtRules": ["if", "else"]
+      }
+    ],
+    "selector-max-id": 0,
+    "no-descending-specificity": [
+      true,
+      {
+        "ignore": ["selectors-within-list"]
+      }
+    ],
+    "order/order": ["custom-properties", "declarations"],
+    "order/properties-alphabetical-order": true,
+    "max-nesting-depth": 3,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["composes", "compose-with", "font-range"]
+      }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "at-least",
+          "export",
+          "import",
+          "global",
+          "local"
+        ]
+      }
+    ],
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["attribute", "class"]
+      }
+    ],
+    "function-no-unknown": null,
+    "selector-class-pattern": null,
+    "plugin/selector-bem-pattern": {
+      "preset": "bem",
+      "componentName": "(([a-z0-9]+(?!-$)-?)+)",
+      "componentSelectors": {
+        "initial": "\\.{componentName}(((__|--)(([a-z0-9\\[\\]'=]+(?!-$)-?)+))+)?$"
+      },
+      "ignoreSelectors": [".*\\.has-.*", ".*\\.is-.*"]
+    }
+  }
+}

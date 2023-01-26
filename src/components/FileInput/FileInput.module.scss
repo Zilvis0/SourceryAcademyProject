@@ -1,0 +1,47 @@
+.input {
+  &__wrapper {
+    @include wrapper;
+  }
+
+  &__label {
+    @include label;
+
+    &--required::before {
+      @include required-symbol;
+    }
+  }
+
+  &__field {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    padding: 0.9rem 1.6rem 1rem;
+    @include field;
+
+    &:focus-within {
+      @include focus;
+    }
+  }
+
+  &__error-msg {
+    @include error-msg;
+  }
+
+  &--has-error {
+    @include error;
+  }
+}
+
+.upload {
+  &__icon {
+    height: 1.8rem;
+    margin-left: auto;
+    width: 2rem;
+  }
+}
+
+.file {
+  &__input {
+    @include visally-hidden;
+  }
+}

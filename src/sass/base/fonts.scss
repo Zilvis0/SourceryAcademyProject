@@ -1,0 +1,35 @@
+// Used fonts:
+// Montserrat (as primary) 400&700
+// Raleway (as secondary) 400&700
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
+    url('./fonts/Montserrat/Montserrat-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/Montserrat/Montserrat-Bold.woff') format('woff'),
+    url('./fonts/Montserrat/Montserrat-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/Raleway/Raleway-Regular.woff') format('woff'),
+    url('./fonts/Raleway/Raleway-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/Raleway/Raleway-Bold.woff') format('woff'),
+    url('./fonts/Raleway/Raleway-Bold.woff2') format('woff2');
+}

@@ -1,0 +1,64 @@
+// TYPES
+
+.btn {
+  background-color: var(--btn-base);
+  border: 0;
+  border-radius: 48px;
+  cursor: pointer;
+  padding: 12px 24px;
+  transition: background-color 0.4s linear;
+  @include body-styles('medium', var(--color-light), 700);
+
+  &:hover {
+    background-color: var(--btn-primary);
+  }
+
+  &:active {
+    background-color: var(--btn-secondary);
+  }
+
+  &:focus {
+    background-color: var(--btn-secondary);
+    border: 2px solid var(--btn-primary);
+  }
+
+  &:focus-visible {
+    background-color: var(--btn-secondary);
+    border: 0;
+    outline: 4px dashed var(--color-orange);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.icon {
+  background-color: transparent;
+  border: 0;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: color 0.4s linear, opacity 0.4s linear;
+
+  &:hover {
+    color: var(--btn-primary);
+  }
+
+  &:active {
+    color: var(--btn-secondary);
+  }
+
+  &:focus {
+    color: var(--btn-primary);
+  }
+
+  &:focus-visible {
+    outline: 4px dashed var(--color-orange);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}

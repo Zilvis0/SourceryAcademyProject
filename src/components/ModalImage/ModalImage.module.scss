@@ -1,0 +1,67 @@
+.image {
+  flex-direction: column;
+  grid-column: 2;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1086px;
+  padding: 0;
+  position: relative;
+  user-select: none;
+  width: 100%;
+  @include flex-center;
+
+  &__container {
+    background-color: var(--color-base);
+    cursor: zoom-in;
+    height: 100vh;
+    width: 100vw;
+    @include flex-center;
+
+    @include media-query('lg') {
+      width: 100%;
+    }
+
+    @include media-query-vertical($width: 'md', $height: 'sm') {
+      height: 612px;
+      width: 100%;
+    }
+
+    &--maximized {
+      cursor: zoom-out;
+      grid-column: 1 / span 3;
+      height: 100vh;
+      width: 100vw;
+    }
+  }
+
+  &__wrapper {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  &__figcaption {
+    background-color: var(--color-primary);
+    bottom: 0;
+    opacity: 1;
+    padding: 1rem 0;
+    position: absolute;
+    text-align: center;
+    transition: opacity 1s ease;
+    width: 100%;
+    z-index: 1;
+    @include body-styles(_, var(--color-light));
+
+    @include media-query-vertical($width: 'md', $height: 'sm') {
+      width: 100%;
+    }
+
+    &--animated {
+      opacity: 0;
+    }
+
+    &--maximized {
+      width: 100vw;
+    }
+  }
+}

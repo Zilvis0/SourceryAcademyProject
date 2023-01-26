@@ -1,0 +1,26 @@
+{
+  "headingText": "Academy information",
+  "privacyText": "I have read, understand and accept the content of the Privacy Notice and consent to the processing of my data as part of this application.",
+  "buttonText": "Register",
+  "typesLegendText": "Academy type",
+  "citiesText": {
+    "label": "Academy city",
+    "placeholder": "Please select city"
+  },
+  "firstNameText": {
+    "label": "First name",
+    "placeholder": "Enter your first name"
+  },
+  "lastNameText": {
+    "label": "Last name",
+    "placeholder": "Enter your last name"
+  },
+  "emailText": {
+    "label": "Email",
+    "placeholder": "Enter your email"
+  },
+  "resumeText": {
+    "label": "Resume",
+    "placeholder": "Upload your resume"
+  }
+}

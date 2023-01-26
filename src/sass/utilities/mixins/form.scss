@@ -1,0 +1,47 @@
+@mixin wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+@mixin required {
+  left: -0.9rem;
+  position: absolute;
+  top: -0.2rem;
+  @include body-styles('medium', var(--color-red-300), 700);
+}
+
+@mixin label {
+  @include body-styles('small', var(--color-dark-400));
+}
+
+@mixin field {
+  border: 1px solid var(--color-dark-400);
+  border-radius: 0.5em;
+  font-family: inherit;
+  width: 100%;
+  @include body-styles('medium', var(--color-dark-400));
+}
+
+@mixin error {
+  border-color: var(--color-red-300);
+}
+
+@mixin error-msg {
+  @include body-styles('small', var(--color-red-300));
+  margin: 0;
+}
+
+@mixin required-symbol {
+  content: '*';
+  left: -1rem;
+  line-height: 0.8;
+  position: absolute;
+  @include body-styles('large', var(--color-red-300), 700);
+}
+
+@mixin focus {
+  border-color: var(--color-dark-400);
+  outline: 4px solid var(--outline-color);
+}

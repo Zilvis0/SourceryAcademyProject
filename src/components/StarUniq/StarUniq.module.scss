@@ -1,0 +1,12 @@
+$utility-colors: (
+  'base': var(--star-base),
+  'primary': var(--star-primary),
+  'secondary': var(--star-secondary),
+  'tertiary': var(--star-tertiary),
+);
+
+@each $key, $color in $utility-colors {
+  .#{$key} {
+    color: $color;
+  }
+}

@@ -1,0 +1,60 @@
+%quotes {
+  display: block;
+  white-space: pre;
+  @include heading-styles('primary');
+}
+
+.testimonial-card {
+  align-items: center;
+  background-color: var(--color-light);
+  border: 2px solid var(--color-primary);
+  border-radius: 2rem;
+  box-shadow: -1rem 1rem var(--color-gray);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1.5rem;
+
+  @include media-query('lg') {
+    box-shadow: -2rem 2rem var(--color-gray);
+    padding: 3.5rem 3rem 3.8rem;
+  }
+
+  &__image-wrapper {
+    @include flex-center;
+    border-radius: 50%;
+    height: 7.8rem;
+    overflow: hidden;
+    width: 7.8rem;
+  }
+
+  &__image {
+    height: auto;
+    width: 100%;
+  }
+
+  &__testimonial {
+    @include body-styles('small', var(--color-primary));
+    margin: 0;
+
+    &::before {
+      content: '“';
+      @extend %quotes;
+    }
+
+    &::after {
+      content: '„';
+      text-align: right;
+      @extend %quotes;
+    }
+  }
+
+  &__author {
+    @include body-styles('large', var(--color-primary), 700);
+    margin: 1.1rem 0 0.7rem;
+  }
+
+  &__academy {
+    @include body-styles('small', var(--color-primary));
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "apply": {
+    "title": "Apply",
+    "description": "Academy students are given an opportunity to be immersed in a professional two-month course for the front-end developers, build their competence through trainings and individual or groups assignments."
+  },
+  "admission": {
+    "title": "Pass the admission",
+    "description": "Entry test is performed by those candidates who submit their summary. Test results define a priority list of candidates who are invited into the workshop. We accept 20 candidates with highest marks into academy."
+  },
+  "learn": {
+    "title": "Learn from the experts",
+    "description": "Students will discover all types, techniques and design approaches. They will learn how to write semantic elements in HTML, apply advanced CSS techniques, understand accessibility standards and many more."
+  },
+  "company": {
+    "title": "Join the company",
+    "description": "The Academy starts in the end of October and lasts until January. Top graduates will be invited for an interview to become a Junior Front-End Software Engineer."
+  }
+}

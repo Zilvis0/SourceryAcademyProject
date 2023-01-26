@@ -1,0 +1,29 @@
+.section-team-hero {
+  $image-width: 632px;
+  margin-bottom: 20rem;
+  padding-bottom: 16rem;
+  position: relative;
+
+  &__image {
+    border-radius: 7rem;
+    height: 100%;
+    margin-inline: auto;
+    max-width: $image-width;
+    width: 100%;
+
+    @include media-query('lg') {
+      border-radius: 13.4rem;
+    }
+  }
+
+  &__wave {
+    display: none;
+
+    @include media-query('lg') {
+      bottom: 0;
+      display: block;
+      position: absolute;
+      right: 6%;
+    }
+  }
+}

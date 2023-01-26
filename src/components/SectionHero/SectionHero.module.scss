@@ -1,0 +1,50 @@
+.hero {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 5rem;
+  @include padding-y(5rem, 10rem);
+
+  @include media-query('md') {
+    flex-direction: row;
+    @include padding-y(9.7rem, 20.6rem);
+  }
+
+  @include media-query('lg') {
+    @include padding-y(19.4rem, 41.2rem);
+  }
+
+  &__content {
+    flex-basis: 38%;
+    flex-direction: column;
+    max-width: 100%;
+    text-align: center;
+    @include flex-center;
+
+    @include media-query('md') {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    &-heading {
+      @include heading-styles('primary');
+      margin: 0;
+    }
+
+    &-description {
+      @include body-styles('medium');
+      margin: 0;
+      padding: 3.5rem 0 5.4rem;
+    }
+  }
+
+  &__illustration {
+    @include animate-blob-element('blob-element');
+    @include animate-circle-elements('circle-elements');
+
+    @include media-query('md') {
+      width: 50%;
+    }
+  }
+}

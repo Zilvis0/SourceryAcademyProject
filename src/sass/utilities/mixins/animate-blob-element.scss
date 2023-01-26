@@ -1,0 +1,13 @@
+@mixin animate-blob-element($class, $duration: 5s) {
+  g[class='#{$class}'] {
+    animation: blob-skew $duration linear 0s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+
+    > path {
+      animation: blob-scale $duration ease-in-out 0s infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+  }
+}

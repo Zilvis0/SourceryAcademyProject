@@ -1,0 +1,7 @@
+$overflow-types: visible, hidden, scroll, auto;
+
+@each $type in $overflow-types {
+  .overflow-#{$type} {
+    overflow: $type;
+  }
+}

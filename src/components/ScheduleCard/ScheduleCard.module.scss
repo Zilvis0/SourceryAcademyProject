@@ -1,0 +1,123 @@
+@keyframes slideDown {
+  0% {
+    margin-top: -10px;
+    opacity: 0;
+  }
+
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+.calendar-card {
+  align-items: center;
+  display: flex;
+
+  &__pin {
+    margin-right: 8.8px;
+  }
+}
+
+.time-wrapper {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+
+  &__hours {
+    padding-right: 6px;
+  }
+
+  &::after {
+    background-color: var(--color-light);
+    border: 1px solid var(--color-light);
+    border-radius: 20px;
+    content: '';
+    height: 90%;
+    width: 0;
+  }
+}
+
+.rotation {
+  transform: rotate(180deg);
+}
+
+.details {
+  background-color: var(--color-light);
+  border: 2px solid var(--color-primary);
+  border-radius: 20px;
+  box-shadow: -10px 10px 0 0 var(--color-gray);
+  color: var(--color-light);
+  font-family: var(--font-family-secondary);
+  margin: 0;
+
+  @include media-query('lg') {
+    box-shadow: -20px 20px 0 0 var(--color-gray);
+  }
+
+  &[open] &__summary ~ * {
+    animation: slideDown 0.5s ease-in-out;
+  }
+
+  &__summary {
+    background-color: var(--color-primary);
+    border-radius: 15px;
+    display: block;
+    padding: 2rem 2.1rem 2rem 2rem;
+    @include body-styles('medium', var(--color-light));
+
+    @include media-query('lg') {
+      padding: 1.9rem 2.1rem 2.4rem 2rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--expanded {
+      border-radius: 15px 15px 0;
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__heading {
+    margin: 0;
+    max-width: 80%;
+
+    &-wrapper {
+      align-items: baseline;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__lecturer {
+    align-items: center;
+    background-color: var(--color-primary);
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    padding-top: 2.5rem;
+    @include body-styles('small', var(--color-light));
+  }
+
+  &__time {
+    background-color: var(--color-primary);
+    display: flex;
+    gap: 1.6rem;
+    justify-content: flex-start;
+    padding-top: 1.2rem;
+    @include body-styles('small', var(--color-light));
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-around;
+    padding: 2rem 2rem 1.9rem;
+  }
+}

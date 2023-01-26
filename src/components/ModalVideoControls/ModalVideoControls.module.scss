@@ -1,0 +1,72 @@
+.video-controls {
+  align-items: center;
+  border-radius: 0 0 2rem 2rem;
+  bottom: 0;
+  display: flex;
+  height: 4.8rem;
+  opacity: 1;
+  overflow: visible;
+  position: absolute;
+  transition: opacity 1s ease;
+  width: 100%;
+
+  @include media-query-vertical($width: 'md', $height: 'sm') {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &::before {
+    background-color: var(--color-primary);
+    content: '';
+    inset: 0;
+    opacity: 0.5;
+    position: absolute;
+  }
+
+  &--maximized {
+    overflow: visible;
+    width: 100vw;
+  }
+
+  &--animated:not(:hover) {
+    opacity: 0;
+  }
+
+  &--focused:focus-within {
+    opacity: 1;
+  }
+
+  &__settings {
+    display: flex;
+    height: 100%;
+    margin-left: auto;
+  }
+
+  &__play-time {
+    @include body-styles('sm', var(--color-light));
+    margin-left: 1.6rem;
+    z-index: 1;
+  }
+
+  &__button {
+    background-color: var(--color-secondary);
+    border: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 6.9rem;
+    z-index: 1;
+    @include flex-center;
+
+    &--disabled > * {
+      opacity: 0.5;
+    }
+
+    &--hidden {
+      display: none;
+
+      @include media-query-vertical($width: 'md', $height: 'sm') {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.section-academies {
+  margin-inline: auto;
+  position: relative;
+  text-align: center;
+  width: 85%;
+  @include padding-y(7.5rem);
+
+  @include media-query('lg') {
+    @include padding-y(13.4rem, 13.6rem);
+  }
+
+  &__title {
+    @include heading-styles('primary');
+    margin: 0 0 2.9rem;
+  }
+
+  &__description {
+    @include body-styles('medium');
+    margin: 0;
+
+    &::after {
+      background-color: var(--color-primary);
+      content: '';
+      display: block;
+      height: 4.8rem;
+      margin: 1.5rem auto 1rem;
+      width: 0.2rem;
+
+      @include media-query('md') {
+        margin-bottom: 3.2rem;
+        margin-top: 3.5rem;
+      }
+    }
+  }
+
+  &__stars-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}

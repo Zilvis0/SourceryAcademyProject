@@ -1,0 +1,59 @@
+.step-card {
+  counter-increment: steps-number;
+  display: flex;
+  gap: 1.2rem;
+
+  &__content {
+    width: 100%;
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  &__heading {
+    @include heading-styles('secondary', 700);
+    border-bottom: 2px solid var(--color-primary);
+    margin: 0.5rem 0 1rem;
+    padding-bottom: 1.7rem;
+
+    @include media-query('md') {
+      margin: 2rem 0 2.5rem;
+    }
+  }
+
+  &__description {
+    @include body-styles('medium');
+    margin: 0;
+  }
+
+  &__illustration {
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    height: 10rem;
+    min-width: 10rem;
+    position: relative;
+
+    @include media-query('md') {
+      height: 15.8rem;
+      min-width: 15.8rem;
+    }
+
+    &::before {
+      background-color: var(--color-light);
+      border-radius: 50%;
+      content: counter(steps-number);
+      height: 3.9rem;
+      position: absolute;
+      width: 3.5rem;
+      @include heading-styles('primary', 700);
+      @include flex-center;
+
+      @include media-query('md') {
+        height: 5.9rem;
+        width: 5.5rem;
+      }
+    }
+  }
+}

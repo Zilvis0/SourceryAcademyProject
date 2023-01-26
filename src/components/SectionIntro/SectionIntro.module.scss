@@ -1,0 +1,167 @@
+@mixin element-size($width: 100%, $height: 100%) {
+  height: $height;
+  width: $width;
+}
+
+.intro {
+  align-items: center;
+  display: grid;
+  row-gap: 3rem;
+  @include padding-y(7.5rem);
+
+  @include media-query('lg') {
+    column-gap: 10%;
+    grid-template-columns: repeat(2, 1fr);
+    @include padding-y(9rem, 28rem);
+  }
+
+  @include media-query('xxl') {
+    column-gap: 18.4rem;
+  }
+}
+
+.text-column {
+  position: relative;
+  text-align: center;
+
+  @include media-query('lg') {
+    text-align: left;
+  }
+
+  @include media-query('xxl') {
+    margin: auto 0 4.6rem;
+  }
+
+  &__title {
+    @include heading-styles('primary');
+    margin: 0;
+  }
+
+  &__description {
+    margin: 3rem auto;
+    @include body-styles('medium', var(--color-dark-400));
+
+    @include media-query('md') {
+      max-width: 80%;
+    }
+
+    @include media-query('lg') {
+      margin: 3.5rem 0 5.1rem;
+    }
+  }
+
+  &__button {
+    background-color: var(--color-secondary);
+  }
+
+  &__line {
+    @include element-size(75%, 80%);
+    @include media-query('xl') {
+      bottom: -16rem;
+      right: 1rem;
+    }
+  }
+}
+
+.play-button {
+  color: var(--color-primary);
+  left: 50%;
+  overflow: visible;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @include element-size(25%, 25%);
+
+  @include media-query('md') {
+    height: auto;
+    width: auto;
+  }
+
+  > path {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 1s ease;
+  }
+}
+
+.video-column {
+  $section-heights: (
+    xsm: 30rem,
+    md: 40rem,
+    xl: 50rem,
+    xxl: 62rem,
+  );
+
+  display: flex;
+  height: 25rem;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+
+  @each $key, $height in $section-heights {
+    @include media-query($key) {
+      height: #{$height};
+    }
+  }
+
+  &__button {
+    border: unset;
+    border-radius: 15%;
+    cursor: pointer;
+    opacity: 0.6;
+    overflow: hidden;
+    padding: 0;
+
+    @include element-size();
+
+    @include media-query('sm') {
+      margin: 0 auto;
+      width: 80%;
+    }
+
+    @include media-query('xxl') {
+      border-radius: 18rem;
+      height: 100%;
+      width: 62rem;
+    }
+
+    &:hover .play-button {
+      path {
+        transform: rotate(360deg) scale(1.1);
+      }
+    }
+  }
+
+  &__image {
+    @include element-size();
+    object-fit: cover;
+  }
+
+  &__line {
+    @include element-size();
+    @include media-query('xl') {
+      bottom: -12%;
+      left: 0;
+    }
+    @include media-query('xxl') {
+      bottom: -6rem;
+      left: -4rem;
+    }
+  }
+}
+
+.line {
+  color: var(--color-primary);
+  display: none;
+  position: absolute;
+  z-index: -1;
+
+  @include media-query('xl') {
+    display: block;
+  }
+
+  @include media-query('xxl') {
+    height: unset;
+    width: unset;
+  }
+}

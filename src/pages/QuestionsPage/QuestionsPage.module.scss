@@ -1,0 +1,139 @@
+@keyframes number-in {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes heading-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes description-in {
+  from {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.question-section {
+  $illustration-height: 732px;
+
+  @include container-width;
+  @include padding-x(1.75rem);
+  align-items: center;
+  display: grid;
+  position: relative;
+
+  @include media-query('xsm') {
+    @include padding-x(4rem);
+  }
+
+  @include media-query('xl') {
+    @include padding-x(12.8rem);
+  }
+
+  @include media-query('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__illustration {
+    height: auto;
+    justify-self: right;
+    width: 100%;
+    @include animate-blob-element('blob-element');
+    @include animate-circle-elements('circle-elements');
+
+    @include media-query('md') {
+      grid-column: 2;
+      max-height: $illustration-height;
+    }
+  }
+
+  &__stars-wrapper {
+    display: grid;
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+
+    @include media-query('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.question-section-content {
+  $countdown-height: 296px;
+
+  display: flex;
+  flex-direction: column;
+
+  @include media-query('md') {
+    width: fit-content;
+  }
+
+  &__heading {
+    @include heading-styles('primary');
+    margin: 0;
+    margin: 3rem 0 0;
+    text-align: center;
+
+    @include media-query('md') {
+      text-align: left;
+    }
+
+    @include media-query('lg') {
+      margin: 0 0 6.4rem;
+    }
+
+    &--faded {
+      animation: heading-in 0.5s ease-in-out forwards;
+    }
+  }
+
+  &__description {
+    animation: description-in 1s ease-in-out forwards 0.5s;
+    opacity: 0;
+    text-align: center;
+    @include heading-styles($type: 'secondary', $color: var(--color-secondary));
+  }
+
+  &__countdown {
+    align-self: center;
+    max-height: $countdown-height;
+
+    > svg {
+      animation: number-in 0.3s ease-in-out forwards;
+      display: block;
+      margin-inline: auto;
+      opacity: 0;
+      width: 50%;
+
+      @include media-query('md') {
+        width: 80%;
+      }
+
+      @include media-query('lg') {
+        width: 100%;
+      }
+    }
+  }
+}

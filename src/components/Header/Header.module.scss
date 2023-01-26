@@ -1,0 +1,16 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @include padding-y(2.8rem);
+
+  &__logo-title {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    text-decoration: none;
+    white-space: nowrap;
+    @include body-styles('medium', var(--color-primary), 700);
+  }
+}

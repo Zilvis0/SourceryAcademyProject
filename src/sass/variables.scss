@@ -1,0 +1,82 @@
+:root {
+  /* Colors */
+  --color-purple-300: #7971fd;
+  --color-purple-400: #584dfc;
+  --color-purple-500: #3d3691;
+  --color-purple-600: #483ed8;
+
+  --color-blue-100: #3f73cb;
+  --color-blue-200: #ecebfb;
+  --color-blue-300: #17bce3;
+  --color-blue-400: #4d8af0;
+  --color-blue-500: #0048c1;
+  --color-blue-600: #71a1f3;
+  --color-alice-blue: #eef4fd;
+
+  --color-green-100: #1faf9a;
+  --color-green-200: #007c6a;
+  --color-green-300: #1ce5af;
+  --color-green-400: #009b84;
+  --color-green-500: #0b555f;
+
+  --color-red-100: #c01745;
+  --color-red-200: #f14a77;
+  --color-red-300: #ff0753;
+  --color-red-400: #ed1d55;
+  --color-red-500: #b40031;
+
+  --color-dark-300: #868686;
+  --color-dark-400: #5c5c5c;
+  --color-dark-500: #3e3c4e;
+  --color-light: #fff;
+  --color-gray: #f6f5f7;
+  --color-gray-400: #dbdbdb;
+
+  --color-orange: #f89e4b;
+  --color-orange-600: #f55f44;
+
+  --color-rgba-dark: rgba(10, 10, 10, 0.7);
+  --color-rgba-blue: rgba(77, 138, 240, 0.5);
+  --color-rgba-green: rgba(0, 155, 132, 0.5);
+  --color-rgba-red: rgba(237, 29, 85, 0.5);
+
+  /* Base */
+  --color-primary: var(--color-purple-500);
+  --color-secondary: var(--color-purple-400);
+  --color-tertiary: var(--color-purple-400); /* for svgs in different themes */
+  --color-base: var(--color-dark-500);
+
+  --modal-overlay-color: var(--color-rgba-dark);
+  --outline-color: var(--color-rgba-blue);
+
+  --font-size-base: 1.6rem;
+  --font-family-primary: 'Montserrat';
+  --font-family-secondary: 'Raleway';
+  --line-height-heading: 1.22;
+  --line-height-base: 1.5;
+  --container-width: 1440px;
+  --container-padding: 40px;
+
+  /* buttons */
+
+  --btn-base: var(--color-secondary);
+  --btn-primary: var(--color-purple-600);
+  --btn-secondary: var(--color-purple-300);
+
+  /* Stars */
+  --star-base: var(--color-gray-400);
+  --star-primary: var(--color-blue-400);
+  --star-secondary: var(--color-green-300);
+  --star-tertiary: var(--color-orange-600);
+
+  /* Spacers */
+  --spacer-xxs: 0.4rem;
+  --spacer-xs: 0.8rem;
+  --spacer-s: 1.2rem;
+  --spacer-m: 1.6rem;
+  --spacer: var(--spacer-m); /* alias for --spacer-m */
+  --spacer-l: 2rem;
+  --spacer-xl: 2.4rem;
+  --spacer-xxl: 3.2rem;
+  --spacer-xxxl: 4rem;
+}

@@ -1,0 +1,20 @@
+/* Import variables */
+@import 'variables';
+
+/* Vendor styles // Contains third party libs CSS */
+@import 'vendor/index';
+
+/* Utilities styles */
+@import 'utilities/index';
+
+/* Base styles */
+@import 'base/index';
+
+/* Theme styles */
+@import 'themes/index';
+
+/* Layout */
+@import 'layout/index';
+
+/* Print stylesheet */
+@import 'vendor/print';

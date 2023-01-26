@@ -1,0 +1,51 @@
+.month {
+  display: flex;
+  flex-direction: column;
+
+  &__heading {
+    color: var(--color-primary);
+    margin-top: 20px;
+    @include heading-styles('secondary');
+
+    @include media-query('md') {
+      margin: 0 0 4.6rem;
+    }
+  }
+
+  &__layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+
+    @include media-query('lg') {
+      gap: 4rem;
+    }
+  }
+
+  &--even {
+    display: flex;
+  }
+
+  &--dash {
+    display: none;
+    @include media-query('md') {
+      display: block;
+      margin: 0 2rem 0 0;
+    }
+  }
+
+  &:nth-of-type(odd) {
+    align-items: center;
+    @include media-query('md') {
+      align-items: flex-end;
+    }
+  }
+
+  &:nth-of-type(even) {
+    align-items: center;
+    @include media-query('md') {
+      align-items: flex-start;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@keyframes stars-animation {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(0.25);
+  }
+
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes stars-animation-reverse {
+  from {
+    transform: rotate(0deg) scale(0.25);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+
+  to {
+    transform: rotate(360deg) scale(0.25);
+  }
+}
+
+.stars-wrapper {
+  align-self: stretch;
+  display: block;
+  overflow: visible;
+
+  svg {
+    &:nth-child(even) > path,
+    g {
+      animation: stars-animation 1500ms infinite linear;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    &:nth-child(odd) > path,
+    g {
+      animation: stars-animation-reverse 1500ms infinite linear;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+  }
+}

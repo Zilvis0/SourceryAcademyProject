@@ -1,0 +1,147 @@
+.media {
+  $spacing-sm: (7.5rem);
+  $spacing-lg: (3.5rem, 25.3rem);
+
+  position: relative;
+  @include padding-y($spacing-sm);
+
+  @include media-query('lg') {
+    @include padding-y($spacing-lg...);
+  }
+
+  &__line {
+    &--home {
+      color: var(--color-primary);
+      display: none;
+      left: -5%;
+      position: absolute;
+      top: -29%;
+      z-index: -1;
+
+      @include media-query('xl') {
+        display: block;
+      }
+    }
+
+    &--academy {
+      color: var(--color-primary);
+      display: none;
+      left: -6%;
+      position: absolute;
+      top: 8%;
+      z-index: -1;
+
+      @include media-query('xl') {
+        display: block;
+      }
+    }
+  }
+
+  &__heading {
+    margin: 0 0 2rem;
+    @include heading-styles('primary');
+
+    @include media-query('md') {
+      margin: 0 0 4.1rem;
+    }
+  }
+
+  &__stars-wrapper {
+    display: grid;
+    grid-template-rows: minmax(auto, $spacing-sm) 1fr;
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+
+    @include media-query('lg') {
+      grid-template-rows: minmax(auto, nth($spacing-lg, 1)) 1fr;
+    }
+  }
+}
+
+.play-button {
+  bottom: 50%;
+  color: var(--color-primary);
+  height: 33%;
+  overflow: visible;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 33%;
+
+  @include media-query('md') {
+    height: auto;
+    width: auto;
+  }
+
+  > path {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 1s ease;
+  }
+}
+
+.content {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-areas:
+    '. .'
+    'bgft bgft'
+    '. .'
+    'bgvd bgvd';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 16rem);
+
+  @include media-query('md') {
+    grid-template-areas:
+      '. bgft bgft .'
+      '. . bgvd bgvd';
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 22rem);
+  }
+
+  @include media-query('lg') {
+    grid-gap: 4rem;
+  }
+
+  &__thumbnail {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__card {
+    background-color: var(--color-light);
+    border: 0.2rem solid var(--color-primary);
+    border-radius: 2rem;
+    box-shadow: -1rem 1rem 0 0 var(--color-gray);
+    cursor: pointer;
+    font-size: 30px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-align: center;
+
+    @include media-query('lg') {
+      box-shadow: -2rem 2rem 0 0 var(--color-gray);
+    }
+
+    &:focus-visible {
+      outline: 4px dashed var(--color-orange);
+    }
+
+    &:hover .play-button {
+      path {
+        transform: scale(1.1) rotate(360deg);
+      }
+    }
+
+    &--big-foto {
+      grid-area: bgft;
+    }
+
+    &--big-video {
+      grid-area: bgvd;
+    }
+  }
+}

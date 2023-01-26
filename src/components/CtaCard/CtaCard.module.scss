@@ -1,0 +1,42 @@
+.cta-card {
+  $spacing-sm: 2rem;
+  $spacing-lg: (3.5rem, 5.3rem);
+
+  position: relative;
+
+  &__title {
+    @include heading-styles('secondary');
+    margin: 0;
+  }
+
+  &__description {
+    margin: 0;
+    @include body-styles('medium');
+    @include padding-y($spacing-sm);
+
+    @include media-query('lg') {
+      @include padding-y($spacing-lg...);
+    }
+  }
+
+  &__stars-wrapper {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-rows: minmax(auto, $spacing-sm * 2) 1fr minmax(auto,
+    $spacing-sm * 2);
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+
+    @include media-query('lg') {
+      grid-template-rows: minmax(auto, nth($spacing-lg, 1) * 2) 1fr minmax(auto,
+      nth($spacing-lg, 2) * 2);
+    }
+
+    > svg:nth-of-type(2) {
+      grid-row: 3;
+    }
+  }
+}

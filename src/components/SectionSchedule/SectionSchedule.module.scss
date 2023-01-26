@@ -1,0 +1,82 @@
+.schedule {
+  $spacing-sm: (7.5rem, 15rem);
+  $spacing-lg: (4rem, 27.7rem);
+
+  position: relative;
+  @include padding-y($spacing-sm...);
+
+  @include media-query('lg') {
+    @include padding-y($spacing-lg...);
+  }
+
+  &__heading {
+    @include heading-styles('primary');
+    font-family: var(--font-family-secondary);
+    margin: 0;
+    padding-bottom: 2rem;
+    text-align: center;
+
+    @include media-query('md') {
+      padding-bottom: 4rem;
+    }
+
+    @include media-query('lg') {
+      padding-bottom: 6rem;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+
+    &--line {
+      display: none;
+
+      @include media-query('xl') {
+        display: block;
+        position: absolute;
+        right: -6.3rem;
+        stroke: var(--color-primary);
+        top: 0;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__months {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    min-height: 680px;
+
+    @include media-query('md') {
+      gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+    }
+
+    @include media-query('lg') {
+      gap: 4rem;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__stars-wrapper {
+    display: grid;
+    grid-template-rows: minmax(auto, nth($spacing-sm, 1)) 1fr minmax(auto,
+    nth($spacing-sm, 2));
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+
+    > svg:last-of-type {
+      grid-row: 3;
+    }
+
+    @include media-query('lg') {
+      grid-template-rows: minmax(auto, nth($spacing-lg, 1)) 1fr minmax(auto,
+      nth($spacing-lg, 2));
+    }
+  }
+}

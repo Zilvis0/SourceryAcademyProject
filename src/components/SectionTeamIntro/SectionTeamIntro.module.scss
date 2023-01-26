@@ -1,0 +1,44 @@
+.team-intro {
+  position: relative;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.4rem;
+    width: 100%;
+    @include media-query('xxl') {
+      width: unset;
+    }
+  }
+
+  &__text {
+    background-color: var(--color-alice-blue);
+    padding: 0 0 5rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__heading {
+    @include heading-styles('primary');
+    margin: 0 0 2rem;
+  }
+
+  &__description {
+    @include body-styles('medium', var(--color-dark-400));
+    margin: 0 auto;
+    width: 75%;
+  }
+}
+
+.left-side {
+  left: -12.9rem;
+  position: absolute;
+  top: 0;
+}
+
+.right-side {
+  position: absolute;
+  right: -6.3rem;
+  top: 0;
+}

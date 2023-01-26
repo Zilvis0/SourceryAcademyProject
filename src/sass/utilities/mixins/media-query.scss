@@ -1,0 +1,22 @@
+$breakpoints: (
+  xsm: 320px,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@mixin media-query($keys...) {
+  @each $key in $keys {
+    @media (min-width: map-get($breakpoints, $key)) {
+      @content;
+    }
+  }
+}
+
+@mixin media-query-vertical($width, $height) {
+  @media (min-width: map-get($breakpoints, $width)) and (min-height: map-get($breakpoints, $height)) {
+    @content;
+  }
+}

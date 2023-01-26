@@ -1,0 +1,14 @@
+.registration-message {
+  @include flex-center;
+  flex-direction: column;
+
+  &__title {
+    @include heading-styles('secondary');
+    margin: 4rem 0 1.2rem;
+  }
+
+  &__description {
+    @include body-styles('medium', var(--color-primary), 700);
+    margin: 0;
+  }
+}

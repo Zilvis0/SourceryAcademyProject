@@ -1,0 +1,29 @@
+.main-layout {
+  width: 100%;
+
+  &__hero {
+    @include container-width;
+    @include padding-x(1.75rem);
+
+    @include media-query('xsm') {
+      @include padding-x(4rem);
+    }
+
+    @include media-query('xl') {
+      @include padding-x(8rem);
+    }
+  }
+
+  &__section {
+    @include container-width;
+    @include padding-x(1.75rem);
+
+    @include media-query('xsm') {
+      @include padding-x(4rem);
+    }
+
+    @include media-query('xl') {
+      @include padding-x(12.8rem);
+    }
+  }
+}

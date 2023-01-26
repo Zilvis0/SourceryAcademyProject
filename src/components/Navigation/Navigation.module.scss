@@ -1,0 +1,223 @@
+@keyframes nav-wrapper-in {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes nav-element-in {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.dropdown {
+  @include reset-list-style;
+  background-color: var(--color-light);
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 0;
+  text-align: center;
+  top: 4.4rem;
+  width: 100%;
+  z-index: 1;
+
+  @include media-query('md') {
+    margin-left: -1rem;
+    position: absolute;
+    text-align: left;
+    width: max-content;
+  }
+
+  &::after {
+    @include media-query('md') {
+      background-color: var(--color-light);
+      content: '';
+      height: 1rem;
+      left: 50%;
+      position: absolute;
+      right: 50%;
+      top: 0;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 1rem;
+      z-index: 0;
+    }
+  }
+
+  &--close {
+    display: none;
+  }
+
+  &__link {
+    color: var(--color-primary);
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+  }
+
+  &__item {
+    background-color: var(--color-light);
+    width: 100%;
+    @include body-styles('small', var(--color-primary));
+
+    @include media-query('md') {
+      @include body-styles('small', var(--color-primary));
+      color: var(--color-red-400);
+    }
+
+    &:hover {
+      background-color: var(--color-gray);
+    }
+  }
+}
+
+.chevron-down {
+  align-self: center;
+  height: auto;
+  vertical-align: middle;
+  width: 14px;
+}
+
+.navigation {
+  @include body-styles('medium', var(--color-primary));
+
+  display: flex;
+
+  &--expanded {
+    align-items: center;
+    background-color: var(--modal-overlay-color);
+    display: flex;
+    flex-direction: column;
+    inset: 9.5rem 0 0 0;
+    overflow: scroll;
+    position: fixed;
+    z-index: 1;
+
+    @include media-query('md') {
+      align-items: baseline;
+      flex-direction: row;
+      overflow: visible;
+      position: static;
+      width: auto;
+    }
+  }
+
+  &--burger-closed {
+    display: none;
+
+    @include media-query('md') {
+      display: flex;
+    }
+  }
+
+  &__wrapper {
+    @include reset-list-style;
+    animation: nav-wrapper-in 0.5s ease;
+    background-color: var(--color-light);
+    border-radius: 2rem;
+    margin: 2rem;
+    padding: 2rem;
+    text-align: center;
+    width: stretch;
+
+    @include media-query('md') {
+      align-items: center;
+      animation: none;
+      border-radius: 0;
+      display: flex;
+      gap: 2.4rem;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__link {
+    color: var(--color-primary);
+    display: block;
+    text-decoration: none;
+
+    &--active {
+      font-weight: 700;
+    }
+  }
+
+  &__option {
+    align-items: center;
+    animation: nav-element-in 0.5s ease forwards;
+    cursor: pointer;
+    justify-content: center;
+    opacity: 0;
+    padding: 1.8rem 0;
+    @include body-styles('medium', var(--color-primary));
+    @include delay-childs-animation($delay: 0.1, $childs: 5);
+
+    @include media-query('md') {
+      align-items: baseline;
+      animation: none;
+      display: flex;
+      flex-direction: row;
+      opacity: 1;
+      padding: 0;
+      text-decoration: none;
+    }
+
+    &--link {
+      @include body-styles('medium', var(--color-primary));
+      text-decoration: none;
+    }
+
+    &--expandable {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: center;
+
+      @include media-query('md') {
+        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative;
+      }
+    }
+  }
+}
+
+.menu-button {
+  border: 0;
+  border-radius: 0.5rem;
+  height: 40px;
+  width: 40px;
+  @include flex-center;
+
+  @include media-query('md') {
+    display: none;
+  }
+}
+
+.rotation {
+  transform: rotate(180deg);
+}
+
+.expandable-item {
+  cursor: pointer;
+  width: 100%;
+
+  &__option {
+    margin-right: 0.7rem;
+  }
+}

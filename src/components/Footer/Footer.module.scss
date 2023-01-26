@@ -1,0 +1,40 @@
+.copyright,
+.social-icons,
+.social-icon-bubble,
+.social-link {
+  @include flex-center;
+}
+
+.footer {
+  @include media-query('sm') {
+    @include flex-center;
+  }
+}
+
+.social-icons {
+  gap: 1.6rem;
+}
+
+.social-link {
+  background-color: var(--color-blue-200);
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+}
+
+.social-icons {
+  margin: 2.8rem 0;
+  padding: 0;
+}
+
+.social-icon {
+  height: 2.7rem;
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+  width: 2.7rem;
+}
+
+.copyright {
+  margin-left: auto;
+  @include body-styles('small', var(--color-primary));
+}

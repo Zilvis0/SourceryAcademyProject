@@ -1,0 +1,151 @@
+.section-academies-details {
+  $spacing-sm: (7.5rem, 15rem);
+  $spacing-lg: (26.9rem, 31.4rem);
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include padding-y($spacing-sm...);
+
+  @include media-query('lg') {
+    @include padding-y($spacing-lg...);
+  }
+
+  > :nth-child(3n + 2) {
+    flex-direction: column;
+    text-align: left;
+
+    @include media-query('lg') {
+      flex-direction: row;
+    }
+  }
+
+  &__stars-wrapper {
+    display: grid;
+    grid-template-rows: minmax(auto, nth($spacing-sm, 1)) 1fr minmax(auto,
+    nth($spacing-sm, 2));
+    inset: 0;
+    position: absolute;
+
+    @include media-query('lg') {
+      grid-template-rows: minmax(auto, nth($spacing-lg, 1)) 1fr minmax(auto,
+      nth($spacing-lg, 2));
+    }
+
+    > svg:first-of-type {
+      grid-row: 3;
+    }
+  }
+}
+
+.academy-section {
+  $column-gap: 8rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: calc($column-gap / 2);
+  position: relative;
+  text-align: right;
+
+  @include media-query('lg') {
+    flex-direction: row-reverse;
+    gap: $column-gap;
+  }
+
+  > * {
+    flex: 1;
+  }
+
+  &__graphics {
+    height: fit-content;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__wave {
+    display: none;
+
+    @include media-query('xl') {
+      display: block;
+      position: absolute;
+      transform: translate(50%, 50%);
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}
+
+.academy-section-developers {
+  $illustration-width: 431px;
+  $wave-width: 668px;
+  padding-bottom: 8rem;
+
+  @include media-query('lg') {
+    padding-bottom: 14.1rem;
+  }
+
+  &__illustration {
+    max-width: $illustration-width;
+  }
+
+  &__wave-position {
+    bottom: 75%;
+    max-width: $wave-width;
+    right: 45%;
+    width: 50vmax;
+  }
+}
+
+.academy-section-testers {
+  $illustration-width: 354px;
+  $wave-width: 695px;
+  padding-bottom: 8rem;
+
+  @include media-query('lg') {
+    padding-bottom: 23.8rem;
+  }
+
+  &__illustration {
+    max-width: $illustration-width;
+  }
+
+  &__wave-position {
+    bottom: 15%;
+    max-width: $wave-width;
+    right: 58%;
+    width: 50vmax;
+  }
+}
+
+.academy-section-frontend {
+  $illustration-width: 454px;
+  padding-bottom: 8rem;
+
+  @include media-query('lg') {
+    padding-bottom: 14.9rem;
+  }
+
+  &__illustration {
+    max-width: $illustration-width;
+    @include animate-blob-element('blob-element');
+  }
+}
+
+.academy-section-kids {
+  $illustration-width: 458px;
+  $wave-width: 659px;
+
+  &__illustration {
+    max-width: $illustration-width;
+    @include animate-blob-element('blob-element');
+  }
+
+  &__wave-position {
+    bottom: -20%;
+    max-width: $wave-width;
+    right: 45%;
+    width: 50vmax;
+  }
+}

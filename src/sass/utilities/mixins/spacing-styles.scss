@@ -1,0 +1,19 @@
+@mixin margin($t: null, $r: null, $b: null, $l: null, $media: null) {
+  @if ($media) {
+    @include media-query($media) {
+      margin: $t $r $b $l;
+    }
+  } @else {
+    margin: $t $r $b $l;
+  }
+}
+
+@mixin padding($t: null, $r: null, $b: null, $l: null, $media: null) {
+  @if ($media) {
+    @include media-query($media) {
+      padding: $t $r $b $l;
+    }
+  } @else {
+    padding: $t $r $b $l;
+  }
+}

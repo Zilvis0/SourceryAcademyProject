@@ -1,0 +1,56 @@
+.player {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2;
+  height: 100vh;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1086px;
+  padding: 0;
+  position: relative;
+  user-select: none;
+  width: 100%;
+
+  &--maximized {
+    align-items: center;
+  }
+
+  @include media-query-vertical($width: 'md', $height: 'sm') {
+    height: auto;
+  }
+
+  &__wrapper {
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  &__container {
+    background-color: var(--color-base);
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 56.25%; // player ratio: 100 / (1280 / 720)
+    position: static;
+    width: 100vw;
+
+    @include media-query('lg') {
+      width: 100%;
+    }
+
+    @include media-query-vertical($width: 'md', $height: 'sm') {
+      border: 2px solid var(--color-primary);
+      border-bottom: 0;
+      border-radius: 2rem;
+      height: auto;
+      position: relative;
+      width: 100%;
+    }
+
+    &--maximized {
+      border: 0;
+      border-radius: 0;
+      height: 100vh;
+      width: 100vw;
+    }
+  }
+}

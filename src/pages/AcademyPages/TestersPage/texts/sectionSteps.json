@@ -1,0 +1,18 @@
+{
+  "apply": {
+    "title": "Apply",
+    "description": "Academy students are given an opportunity to be immersed in a professional two-month course for the testing beginners, build their competence through trainings and individual or groups assignments."
+  },
+  "admission": {
+    "title": "Pass the admission",
+    "description": "Best candidates will be offered a paid internship for the Academy period to work on the real projects with our development teams. In parallel they are expected to attend academy to develop their skills."
+  },
+  "learn": {
+    "title": "Learn from the experts",
+    "description": "Students will discover all types of techniques: learn the foundations of testing, functional testing for web applications and API, foundations of non-functional testing and foundations for test automation."
+  },
+  "company": {
+    "title": "Join the company",
+    "description": "At the end of term all students will receive a certificate of completion the Sourcery academy for Testers. Top graduates will be invited for an interview to become a Junior Test Engineer."
+  }
+}

@@ -1,0 +1,15 @@
+@mixin animate-circle-elements($class, $duration: 1.5s) {
+  g[class='#{$class}'] {
+    > :nth-child(even) {
+      animation: circle-animations $duration ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    > :nth-child(odd) {
+      animation: circle-animations-reverse $duration ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+  }
+}

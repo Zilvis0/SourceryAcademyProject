@@ -1,0 +1,33 @@
+.section-team-outro {
+  $illustration-width: 1274px;
+  $wave-width: 601px;
+
+  position: relative;
+  @include padding-y(10rem, 4rem);
+
+  @include media-query('xl') {
+    @include padding-y(35.8rem, 6.7rem);
+  }
+
+  &__wave {
+    display: none;
+
+    @include media-query('xl') {
+      display: block;
+      height: auto;
+      max-width: $wave-width;
+      position: absolute;
+      right: 0;
+      top: 6%;
+      width: 100%;
+    }
+  }
+
+  &__illustration {
+    height: auto;
+    max-width: $illustration-width;
+    width: 100%;
+    @include animate-circle-elements('circle-elements');
+    @include animate-blob-element('blob-element');
+  }
+}

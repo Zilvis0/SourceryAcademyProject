@@ -1,0 +1,103 @@
+.step-section {
+  $spacing-sm: 7.5rem;
+  $spacing-lg: (7.8rem, 14.9rem);
+
+  position: relative;
+  @include padding-y(7.5rem);
+
+  @include media-query('lg') {
+    @include padding-y($spacing-lg...);
+  }
+
+  &__illustration {
+    position: absolute;
+    @include animate-blob-element('blob-element');
+
+    &--apply-moved {
+      left: -5%;
+    }
+
+    &--admission-moved {
+      right: -15%;
+    }
+
+    &--learn-moved {
+      left: 20%;
+    }
+
+    &--company-moved {
+      left: -12%;
+    }
+  }
+
+  &__wave {
+    color: var(--color-primary);
+    display: none;
+    left: -7.4rem;
+    position: absolute;
+    top: nth($spacing-lg, 1);
+
+    @include media-query('xl') {
+      display: block;
+    }
+  }
+
+  &__stars-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    grid-template-rows: minmax(auto, $spacing-sm) 1fr minmax(auto, $spacing-sm);
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+
+    @include media-query('xl') {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: minmax(auto, nth($spacing-lg, 1)) 1fr minmax(auto,
+      nth($spacing-lg, 2));
+    }
+
+    > svg:first-of-type {
+      grid-row: 1;
+      justify-self: start;
+
+      @include media-query('xl') {
+        grid-column: 2;
+      }
+    }
+
+    > svg:last-of-type {
+      grid-column: 1;
+      grid-row: 3;
+      justify-self: end;
+    }
+  }
+}
+
+.grid-layout {
+  column-gap: 7.4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 5rem;
+
+  @include media-query('xl') {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 0;
+
+    $span: 3;
+    $rows: 4 * $span;
+    $start-rows: ();
+
+    @for $i from 1 through $rows {
+      @if $i % $span != 0 {
+        $start-rows: append($start-rows, $i);
+      }
+    }
+
+    @each $item in $start-rows {
+      article:nth-child(#{index($start-rows, $item)}) {
+        grid-row: $item / span $span;
+      }
+    }
+  }
+}

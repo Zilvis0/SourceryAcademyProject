@@ -1,0 +1,21 @@
+.main-layout {
+  overflow: hidden;
+  width: 100%;
+
+  &__hero {
+    @include container-width;
+  }
+
+  &__section {
+    @include container-width;
+    @include padding-x(1.75rem);
+
+    @include media-query('xsm') {
+      @include padding-x(4rem);
+    }
+
+    @include media-query('xl') {
+      @include padding-x(12.8rem);
+    }
+  }
+}
